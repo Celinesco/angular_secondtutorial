@@ -8,7 +8,7 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./heroes.component.css'],
 })
 export class HeroesComponent {
-  heros: Hero[] = [];
+  heroes: Hero[] = [];
 
   selectedHero?: Hero; /*  don't assign any value to it since there is no selected hero when the application starts. */
 
@@ -20,7 +20,7 @@ export class HeroesComponent {
   }
 
   getHeroes(): void {
-    this.heros = this.heroService.getHeroes();
+    this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
   }
   ngOnInit(): void {
     this.getHeroes();
