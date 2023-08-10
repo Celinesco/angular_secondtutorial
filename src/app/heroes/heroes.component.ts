@@ -9,6 +9,10 @@ import { HEROES } from '../mock-heros';
 })
 export class HeroesComponent {
   heros = HEROES;
+
+  onSelect(hero: Hero) {
+    console.log(`Someone clicked on ${hero.name}`);
+  }
   // hero: Hero = {
   //   id: 1,
   //   name: 'Gatubela',
