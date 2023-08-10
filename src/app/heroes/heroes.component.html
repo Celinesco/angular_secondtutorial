@@ -18,8 +18,4 @@
 
 
 
-
-<div *ngIf="selectedHero">
-    <h2>{{selectedHero.name | uppercase}} Details</h2>
-    <div>Description: {{selectedHero.description}}</div>
-</div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>

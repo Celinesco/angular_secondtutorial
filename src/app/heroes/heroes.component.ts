@@ -12,10 +12,10 @@ export class HeroesComponent {
 
   selectedHero?: Hero; /*  don't assign any value to it since there is no selected hero when the application starts. */
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
+  onSelect(heroe: Hero): void {
+    this.selectedHero = heroe;
     console.log(
-      `This console.log is left on purpose since it is a tutorial. Someone clicked on ${hero.name}`
+      `This console.log is left on purpose since it is a tutorial. Someone clicked on ${heroe.name}`
     );
   }
   // hero: Hero = {
