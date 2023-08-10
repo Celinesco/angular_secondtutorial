@@ -10,8 +10,13 @@ import { HEROES } from '../mock-heros';
 export class HeroesComponent {
   heros = HEROES;
 
-  onSelect(hero: Hero) {
-    console.log(`Someone clicked on ${hero.name}`);
+  selectedHero?: Hero; /*  don't assign any value to it since there is no selected hero when the application starts. */
+
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+    console.log(
+      `This console.log is left on purpose since it is a tutorial. Someone clicked on ${hero.name}`
+    );
   }
   // hero: Hero = {
   //   id: 1,
