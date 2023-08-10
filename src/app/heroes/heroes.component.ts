@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Hero } from '../hero';
-import { HEROES } from '../mock-heros';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -8,7 +8,7 @@ import { HEROES } from '../mock-heros';
   styleUrls: ['./heroes.component.css'],
 })
 export class HeroesComponent {
-  heros = HEROES;
+  heros: Hero[] = [];
 
   selectedHero?: Hero; /*  don't assign any value to it since there is no selected hero when the application starts. */
 
@@ -18,6 +18,15 @@ export class HeroesComponent {
       `This console.log is left on purpose since it is a tutorial. Someone clicked on ${heroe.name}`
     );
   }
+
+  getHeroes(): void {
+    this.heros = this.heroService.getHeroes();
+  }
+  ngOnInit(): void {
+    this.getHeroes();
+  }
+
+  constructor(private heroService: HeroService) {}
   // hero: Hero = {
   //   id: 1,
   //   name: 'Gatubela',
