@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component'; /* this was added automatically after ng generate component */
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { DashboardComponent } from './dashboard/dashboard.component'; /* this was added automatically after ng generate component */
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component'; /* this was added automatically after ng generate component */
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component'; /* this wa
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
+    PagenotfoundComponent,
   ] /* declarations are added automatically after ng generate component */,
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
