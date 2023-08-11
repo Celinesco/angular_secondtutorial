@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -12,21 +13,23 @@ export class HeroesComponent {
 
   selectedHero?: Hero; /*  don't assign any value to it since there is no selected hero when the application starts. */
 
-  onSelect(heroe: Hero): void {
-    this.selectedHero = heroe;
-    console.log(
-      `This console.log is left on purpose since it is a tutorial. Someone clicked on ${heroe.name}`
-    );
-  }
-
   getHeroes(): void {
     this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
   }
+
+  constructor(
+    private heroService: HeroService,
+    private messageService: MessageService
+  ) {}
   ngOnInit(): void {
     this.getHeroes();
   }
 
-  constructor(private heroService: HeroService) {}
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  }
+
   // hero: Hero = {
   //   id: 1,
   //   name: 'Gatubela',
