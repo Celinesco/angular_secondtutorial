@@ -1,3 +1,4 @@
 export const paths = {
-  heroesList: '/heroes',
+  heroesList: 'heroes',
+  dashboard: 'dashboard',
 };
